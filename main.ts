@@ -12,9 +12,13 @@ basic.forever(function () {
     meteorito = game.createSprite(randint(0, 4), 0)
     for (let index = 0; index < 4; index++) {
         basic.pause(200)
+        meteorito.change(LedSpriteProperty.Y, 1)
     }
     if (meteorito.isTouching(jokalaria)) {
         game.gameOver()
+    } else {
+        game.addScore(1)
     }
     basic.pause(200)
+    meteorito.delete()
 })
